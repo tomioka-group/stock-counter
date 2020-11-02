@@ -1,1 +1,1 @@
-type SheetRow = (string | number)[]
+type SheetRow = (string | number | undefined)[]

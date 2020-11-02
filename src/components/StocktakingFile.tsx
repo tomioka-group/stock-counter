@@ -21,7 +21,7 @@ export const StocktakingFile: FC<Props> = ({
       const book = await readBook(inputRef.current.files[0])
       const rows = utils.sheet_to_json<SheetRow>(book.Sheets[STOCKTAKING_SHEETNAME], { header: 1 })
       setter({
-        shopName: rows[0][1].toString(),
+        shopName: rows[0][1]?.toString() ?? "empty",
         rows: rows,
       })
     }
